@@ -9,7 +9,6 @@ use File::Basename;
 use Getopt::Long;
 use HTML::TagFilter;
 use HTML::Entities;
-use DateTime::Format::Strptime;
 use Data::Dumper;
 use Data::ICal;
 use Data::ICal::Entry::Event;
@@ -57,11 +56,6 @@ $html = decode_entities($html);
 # Initialize html filter
 my $tf = HTML::TagFilter->new(
     strip_comments => 1,
-);
-
-# Initialize date parser
-my $strp = new DateTime::Format::Strptime(
-        pattern => '%d.%m.%Y'
 );
 
 # Parse html
